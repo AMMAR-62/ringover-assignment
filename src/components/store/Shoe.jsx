@@ -1,12 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { AiOutlinePlus } from 'react-icons/ai'
 import "./shoe.scss";
 import bag from "../../images/bag.png"
 
-function ButtonModal({ pro, setCart, cart }) {
+function ButtonModal({ pro, setCart, cart, item, setItem }) {
+  const navigate = useNavigate();
   return (
-    <div className="btn_container" onClick={() => setCart((curr) => [...curr.filter((prod) => prod.id !== pro.id), pro])}>
+    <div className="btn_container" onClick={() => {
+        setCart((curr) => [...curr.filter((prod) => prod.id !== pro.id), pro])
+        if(item.id !== pro.id) setItem(pro);
+        navigate("/product")
+      }
+      }>
       <button>
         <img src={bag} className="addBtn" alt="addtocart" />
       </button>
@@ -14,7 +21,7 @@ function ButtonModal({ pro, setCart, cart }) {
   );
   }
 
-const Shoe = ({ pro, setCart, cart }) => {
+const Shoe = ({ pro, setCart, cart, item, setItem }) => {
   return (
     <div className="product">
       <img
@@ -36,7 +43,7 @@ const Shoe = ({ pro, setCart, cart }) => {
           </div>
         </span>
       </div>
-      <ButtonModal key={pro.id} pro={pro} setCart={setCart} cart={cart} />
+      <ButtonModal key={pro.id} pro={pro} setCart={setCart} cart={cart} item={item} setItem={setItem} />
     </div>
   );
 }

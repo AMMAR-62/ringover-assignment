@@ -8,6 +8,7 @@ import shoe1 from "./images/shoe.jpg";
 import shoe2 from "./images/shoe2.png";
 import Journey from "./components/journey/Journey";
 import Home from "./components/Home/Home.jsx";
+import Product from "./components/item/Item"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -102,6 +103,7 @@ function App() {
    const [filter3, setFilter3] = useState(false);
    const [sneakers, setSneakers] = useState(false);
    const [loafers, setLoafers] = useState(false);
+   const [item, setItem] = useState(false);
 
   const filterArray = () => {
     if (filter1 && filter2 && filter3) {
@@ -151,9 +153,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Journey />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/store" element={<Store prod={prod} setCart={setCart} cart={cart} setFilter1={setFilter1} setFilter2={setFilter2} setFilter3={setFilter3} filter1={filter1} filter2={filter2} filter3={filter3} setSneakers={setSneakers} setLoafers={setLoafers} sneakers={sneakers} loafers={loafers} />} />
+          <Route path="/store" element={<Store prod={prod} setCart={setCart} cart={cart} setFilter1={setFilter1} setFilter2={setFilter2} setFilter3={setFilter3} filter1={filter1} filter2={filter2} filter3={filter3} setSneakers={setSneakers} setLoafers={setLoafers} sneakers={sneakers} loafers={loafers} item={item} setItem={setItem} />} />
           <Route path="/team" element={<Team />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/product" element={<Product item={item} />} />
         </Routes>
       </div>
     </Router>

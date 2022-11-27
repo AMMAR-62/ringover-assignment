@@ -7,8 +7,8 @@ import { FiShoppingBag } from 'react-icons/fi'
 import Cart from "./Cart";
 import "./filter.scss";
 import filter from "../../images/filter.png"
-const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, filter1, filter2, filter3, setSneakers, setLoafers, sneakers, loafers }) => {
-  
+const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, filter1, filter2, filter3, setSneakers, setLoafers, sneakers, loafers, item, setItem }) => {
+
   return (
     <div className="store_container">
       <div className="filter">
@@ -115,7 +115,7 @@ const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, filter
         </div>
         <div className="shoes__array">
           {prod.map((pro) => (
-           <Shoe key={pro.id} pro={pro} setCart={setCart} cart={cart} />
+           <Shoe key={pro.id} pro={pro} setCart={setCart} cart={cart} item={item} setItem={setItem} />
           ))}
         </div>
       </div>
