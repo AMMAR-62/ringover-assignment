@@ -6,7 +6,7 @@ import bag from "../../images/bag.png"
 
 function ButtonModal({ pro, setCart, cart }) {
   return (
-    <div className="btn_container" onClick={() => setCart((curr) => [...curr, pro])}>
+    <div className="btn_container" onClick={() => setCart((curr) => [...curr.filter((prod) => prod.id !== pro.id), pro])}>
       <button>
         <img src={bag} className="addBtn" alt="addtocart" />
       </button>
