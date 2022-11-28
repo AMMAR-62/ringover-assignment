@@ -8,5 +8,5 @@
 5. TeamCard
 
 ---
-## [Website Link](https://euphonious-alfajores-8bcb73.netlify.app/team)
+## [Website Link](https://euphonious-alfajores-8bcb73.netlify.app)
 ---
